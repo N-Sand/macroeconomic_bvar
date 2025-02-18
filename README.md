@@ -19,7 +19,7 @@ We propose the following prior on $\mathbb{A}_ p $. First, define notation $A_ {
 ```math
 \mu_{pij} = \begin{cases} 1 : \text{if p=1 and i=j},\\ 0 : \text{otherwise}\end{cases}
 ```
-What this does is effectively set the prior belief that all of the economic indicators are independent simple random walks. This is because the diagonals are 0, and all elements are 0 which are not the diagnoal of the preceding timestep. Think of $\mathbb{A}_1 \ \text{Ident}(D)$ and $\mathbb{A} _ {p \neq 1} = \mathbb{0}_D$ as a the prior. When the model is being fit, it is deviating slightly from this prior, mitigating overfitting. 
+What this does is effectively set the prior belief that all of the economic indicators are independent simple random walks. This is because the diagonals are 0, and all elements are 0 which are not the diagnoal of the preceding timestep. Think of $\mathbb{A}_1 = \mathbb{I}_D$ and $\mathbb{A} _ {p \neq 1} = \mathbb{0}_D$ as a the prior. When the model is being fit, it is deviating slightly from this prior, mitigating overfitting. 
 
 We also set the variances of the priors in a clever way. We introduce a regularization parameter $\lambda > 0$ which modulates regularization, and we scale the variance of higher order $\mathbb{A}_ p$ to promote our prior belief that recency is more predictive. We set the variances $V_ {pij}$ as follows:
 ```math
@@ -45,7 +45,7 @@ The above figure depicts the posterior predictive density of $h_t$ from 2002 to 
 arviz posterior trace plots of the stochastic volatility parameters.
 ![image](https://github.com/user-attachments/assets/85fe4407-b6e6-43f2-a8d4-5b572aaf7e51)
 
-The static covariance matrix $\Omega$ visualization of 20 economic indicators. Notice that some values are >1, meaning the standard scaling procedure was imperfect. This is because it was scaled before I trimmed the data to be greater than 2002.
+The mean posterior values of the static covariance matrix $\Omega$ visualization of 20 economic indicators. Notice that some values are >1, meaning the standard scaling procedure was imperfect. This is because it was scaled before I trimmed the data to be greater than 2002.
 
 ## Bibliography
 [1] G. M. Martin, D. T. Frazier, W. Maneesoonthorn, R. Loaiza-Maya, F. Huber, G. Koop, J. Maheu, D. Nibbering, and A. Panagiotelis, "Bayesian forecasting in economics and finance: A modern review," Int. J. Forecast., vol. 40, no. 2, pp. 811–839, 2024. [Online]. Available: https://doi.org/10.1016/j.ijforecast.2023.05.002.
