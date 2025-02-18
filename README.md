@@ -39,7 +39,7 @@ Where $\sigma_h > 0, \phi \in [0,1]$ are to be fitted. With this framework, we a
 
 ## Interesting Plots
 ![image](https://github.com/user-attachments/assets/7a535cb2-7c41-4129-b483-cd8e0647c50d)
-The above figure depicts the posterior predictive density of $h_t$ from 2002 to 2025. What we see is a pretty clear indicator of 2008 housing market crash and covid-19's effect on the economy. I also plotted the out of sample simulation of the next 12 months of $h$. Of course, being a random walk, there is little to no structure, and we just see an ambient diffusion as it approaches a steady state. Still interesting though.
+The above figure depicts the posterior predictive density of $h_t$ from 2002 to 2025. What we see is a pretty clear indicator of 2008 housing market crash and covid-19's effect on the economy. I also plotted the out of sample simulation of the next 12 months of $h$. Of course, being a random walk, there is little to no structure, and we just see an ambient diffusion as it approaches a steady state. Still interesting though. It is obvious that a random walk is insufficient to model volatility over all economic regimes. For example, the jumping behaviour during economic crises more closely resemples fat tailed Levy flights or perhaps we can model it as some rare Bernoulli event which blows up volatility for a step or two. 
 ![image](https://github.com/user-attachments/assets/2c4e2fb8-b7e8-45d4-bf36-eb7fab8aa7d2)
 
 arviz posterior trace plots of the stochastic volatility parameters.
