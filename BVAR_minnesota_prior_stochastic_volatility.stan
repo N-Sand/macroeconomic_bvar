@@ -66,7 +66,7 @@ model {
     h[1] ~ normal(0, sigma_h / sqrt(1 - phi^2)); // Stationary prior for h_0
     for (t in 2:T) {
 
-        h[t] ~ normal(phi * h[t-1], sigma_h);
+        h[t] ~ normal(phi * h[t-1], sigma_h); // centered parametrization
     }
 
     // Prior for Omega (recall, y was normalized beforehand so they are unit variance)
